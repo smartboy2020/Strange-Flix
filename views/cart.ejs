@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-cart</title>
+    <link rel="stylesheet" href="../static/css/cart.css">
+    <link rel="stylesheet" href="../static/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../static/bootstrap/mdb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body style="background-color: black;">
+    <div class="topbar">
+        <a class="back" href="/home"><i class="fa fa-chevron-circle-left"></i></a>
+    </div>
+    <class class="display">
+        <img src="../static/img/dr.jpg" alt="">
+        <b>CART</b>
+    </class>
+    <% if (message != "") { %>
+    <div class="alert alert-success" role="alert">
+        <%= message %>
+    </div>
+    <% } %>
+    <% if (error != "") { %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+    <% } %>
+    <div class="selections">
+        <p>Your Selections</p>
+    </div>
+    <div class="middle">
+        <div class="videos">
+            <% if (cartVideo.length != 0) { %>
+            <p class="type">Solo</p>
+            <% for(var i=0; i < cartVideo.length; i++) { %>
+            <div class="content">
+                <img src="/<%= cartVideo[i].thumbnail %>" alt="">
+                <div class="details">
+                    <p>Title: <%= cartVideo[i].title %></p>
+                    <p>Category: <%= cartVideo[i].category %></p>
+                    <p>Duration: <%= cartVideo[i].duration.hours %>:<%= cartVideo[i].duration.minutes %>:<%= cartVideo[i].duration.seconds %></p>
+                </div>
+                <div class="btns">
+                    <a class="btn btn-danger">
+                        <p class="fa fa-inr" aria-hidden="true"> <%= cartVideo[i].price %></p>
+                    </a>
+                    <form action="/cart/remove/video/<%= cartVideo[i]._id %>" method="GET">
+                        <button class="remove">Remove from cart</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+
+
+            <% if (cartSeries.length != 0) { %>
+            <p class="type">Series</p>
+            <% for(var i=0; i < cartSeries.length; i++) { %>
+            <div class="content">
+                <img src="/<%= cartSeries[i].seriesThumbnail %>" alt="">
+                <div class="details">
+                    <p>Title: <%= cartSeries[i].seriesTitle %></p>
+                    <p>No. of Episodes: <%= cartSeries[i].episodeCount %></p>
+                    <p>Category: <%= cartSeries[i].seriesCategory %></p>
+                </div>
+                <div class="btns">
+                    <a class="btn btn-danger">
+                        <p class="fa fa-inr" aria-hidden="true"> <%= cartSeries[i].seriesPrice %></p>
+                    </a>
+                    <form action="/cart/remove/series/<%= cartSeries[i]._id %>" method="GET">
+                        <button class="remove">Remove from cart</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+
+
+        </div>
+        <% if (totalPrice != 0) { %>
+        <div class="total">
+            <p>Total Selections: <%= totalCount %></p>
+            <p>Total Price: <i class="fa fa-inr" aria-hidden="true"> <%= totalPrice %></i> </p>
+            <form action="/payment" method="post">
+                <input type="text" name="amount" value="<%= totalPrice %>" style="display: none;">
+                <button class="pay">Proceed to Checkout <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+
+    <%- include ("footer") %>

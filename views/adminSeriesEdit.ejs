@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series-Info</title>
+    <link rel="stylesheet" href="/static/css/series-info.css">
+</head>
+
+<body>
+    <p class="id">Name:<%= series.seriesTitle %></p>
+    <div class="video">  
+        <div class="info">
+            <form class="details" method="post" action="/admin/edit/series/<%= series._id %>">
+                <div class="form-group">
+                    <label>Series-Title</label>
+                    <input type="text" name="seriesTitle" class="form-control" value="<%= series.seriesTitle %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Series-Price</label>
+                    <div id="price">
+                        <input type="text" name="sym" id="sym" value=&#x20B9; readonly>
+                        <input type="number" name="seriesPrice" value=<%= series.seriesPrice %>  id="price-value"
+                            class="form-control" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Series-Duration</label>
+                    <div id="duration">
+                        <input type="number" name="seriesDuration.hours" class="form-control" value=<%= series.seriesDuration.hours %> placeholder="hrs"
+                            min="0" required>
+                        <input type="number" name="seriesDuration.minutes" class="form-control" value=<%= series.seriesDuration.minutes %>
+                            placeholder="mins" min="0" required>
+                        <input type="number" name="seriesDuration.seconds" class="form-control" value=<%= series.seriesDuration.seconds %>
+                            placeholder="secs" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Series-Description</label>
+                    <textarea type="text" name="seriesDescription" rows="5" cols="30" class="form-control"><%= series.seriesDescription %>
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Series-Tags (Use "," to separate)</label>
+                    <input type="text" name="seriesTags" class="form-control" value="<%= series.seriesTags %>" >
+                </div>
+
+                <div class="form-group">
+                    <label>Series-Category</label>
+                    <input type="text" value="<%= series.seriesCategory %>" name="seriesCategory">
+                </div>
+                <input type="submit" class="btn" value="UPDATE">
+            </form>
+        </div>
+        <img src="/<%= series.seriesThumbnail %>" alt="">
+    </div>
+    <h2 class="Episodes">EPISODES/PLAYLIST</h2>
+    <div class="episodes">
+        <% for(var i=0; i < series.videoList.length; i++) { %>
+            <div class="content">
+                <img src="/<%= series.videoList[i].thumbnail %>" alt="">
+                <p class="epititle">Name: <%= series.videoList[i].title %></p>
+                <p>Duration:
+                    <%= series.videoList[i].duration.hours %>:<%= series.videoList[i].duration.minutes %>:<%= series.videoList[i].duration.seconds %>
+                </p>
+                <p>Price: <%= series.videoList[i].price %></p>
+                <p>Category: <%= series.videoList[i].category %></p>
+                <div class="btns">
+                    <form action="/admin/remove/video/<%= series.videoList[i]._id %>" method="GET">
+                        <button class="btnepi" type="submit">Remove</button>
+                    </form>
+                    <form action="/admin/edit/video/<%= series.videoList[i]._id %>" method="GET">
+                        <button class="btnepi" type="submit">Edit</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        <% } %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<%- include ("header") %>
+<link rel="stylesheet" href="../static/css/home.css">
+<link rel="stylesheet" href="../static/css/fav.css">
+<div class="topright">
+    <p class="myfav">Favourite</p>
+
+    <% if (message != "") { %>
+        <div class="alert alert-success" role="alert">
+            <%= message %>
+        </div>
+    <% } %>
+    <% if (error != "") { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+
+    <% if (series != "") { %>
+        <div class="content">
+            <p>Series</p>
+            <div class="imgs">
+                <% for(var i=0; i < series.length; i++) { %>
+                <div class="box">
+                    <img src="/<%= series[i].seriesThumbnail %>" alt="">
+                    <div class="text">
+                        <form class="fav-icon" action="/fav/remove/series/<%= series[i]._id %>" method="GET">
+                            <button type="submit" class="fa fa-heart"></button>
+                        </form>
+                        <p>Series-Title: <%= series[i].seriesTitle %></p>
+                        <p>Series-Category: <%= series[i].seriesCategory %></p>
+                        <p>Series-Price:&#8377; <%= series[i].seriesPrice %></p>
+                        <p>No. of Episodes: <%= series[i].episodeCount %></p>
+                        <% if(series[i].videoList.length != 0) { %>
+                            <form action="/watch/<%= series[i].videoList[0]._id %>" method="GET">
+                                <button type="submit" class="fa fa-play-circle-o"></button>
+                            </form>
+                        <% } %>
+                        <form action="/cart/add/series/<%= series[i]._id %>" method="GET">
+                            <input class="add" type="submit" value="Add to Cart">
+                        </form>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+        <% if (video != "") { %>
+        <div class="content">
+            <p>Solo</p>
+            <div class="imgs">
+                <% for(var i=0; i < video.length; i++) { %>
+                <div class="box">
+                    <img src="/<%= video[i].thumbnail %>" alt="">
+                    <div class="text">
+                        <form class="fav-icon" action="/fav/remove/video/<%= video[i]._id %>" method="GET">
+                            <button type="submit" class="fa fa-heart"></button>
+                        </form>
+                        <p>Title: <%= video[i].title %></p>
+                        <p>Category: <%= video[i].category %></p>
+                        <p>Price:&#8377; <%= video[i].price %></p>
+                        <form action="/watch/<%= video[i]._id %>" method="GET">
+                            <button type="submit" class="fa fa-play-circle-o"></button>
+                        </form>
+                        <form action="/cart/add/video/<%= video[i]._id %>" method="GET">
+                            <input class="add" type="submit" value="Add to Cart">
+                        </form>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+</div>
+</div>
+
+
+<%- include ("footer") %>

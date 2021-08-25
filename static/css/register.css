@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
+body
+{
+    background-color: black;
+}
+.container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.nav img
+{
+    height: 100%;
+    width: 60px;
+    border-radius: 30px;
+}
+.nav p
+{
+    font-size: 67px;
+    padding-top: 10px;
+    padding-left: 3px;
+    text-align: center;
+    color: #C3073F;
+    text-shadow:2px 2px black;
+}
+.alert-success
+{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 85px;
+    border: 2px solid green;
+    background-color: lightgreen;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #C3073F;
+    text-shadow: none;
+    border-radius: 9px;
+}
+.alert-danger
+{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 85px;
+    border: 2px solid red;
+    background-color: rgba(240, 128, 128, 0.363);
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+    text-shadow: none;
+    border-radius: 9px;
+}
+.box
+{
+    color: white;
+    text-shadow:2px 2px black;
+    background-color: #C3073F;
+    border: 12px double black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+section p
+{
+    font-size: 30px;
+}
+.form
+{
+    display: flex;
+    flex-direction: column;
+}
+.form label
+{
+    font-size: 25px;
+}
+.form input
+{
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #C3073F;
+    outline: none;
+}
+.signup
+{
+    margin-top: 9px;
+    padding: 2px;
+    border: 2px solid #C3073F;
+}
+.signup:hover
+{
+    background-color: #C3073F;
+    box-shadow: 2px 2px 6px 6px white;
+    color: aliceblue;
+}
+.signin
+{
+    padding-top: 20px;
+    text-align: center;
+    font-size:20px ;
+}
+.signin a
+{
+    color: aliceblue;
+}
+.signin a:hover
+{
+    color:yellow;
+}
+.social
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.social a
+{
+    margin: 7px;
+}
+.social i
+{
+    color: white;
+    font-size: 44px;
+}
+.social i:hover
+{
+    transform: scale(1.2);
+}
+.slider
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slider img
+{
+    width: 500px;
+    padding: 20px;
+    border: 2px groove black;
+    background-color: white;
+}
+.slider p
+{
+    color:#C3073F;
+    text-shadow:6px 6px black;
+    padding-top: 20px;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: double;
+    font-family: 'Baloo 2', cursive;
+}
+
+.forgot a
+{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.forgot a:hover
+{
+    color:yellow;
+}
+
+@media screen and (max-width:1460px)
+{
+    .container
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px;
+    }
+}
+@media screen and (max-width:1071px)
+{
+    .container
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .box
+    {
+        margin: 50px;
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+@media screen and (max-width:640px)
+{
+    .container
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+    .slider img
+    {
+        width: 400px;
+        padding: 0;
+    }
+    .slider p
+    {
+        font-size: 32px;
+    }
+    .box
+    {
+        margin: 10px;
+    }
+}
+@media screen and (max-width:487px)
+{
+    .slider img
+    {
+        width: 280px;
+        padding: 0;
+    }
+    .slider p
+    {
+        font-size: 24px;
+    }
+    .nav p
+    {
+        font-size: 48px;
+    }
+    .form label
+    {
+       font-size: 18px;
+    }
+    .form input
+    {
+        font-size: 16px;
+    }
+}

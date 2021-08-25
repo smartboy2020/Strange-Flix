@@ -1,0 +1,148 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
+.alert
+{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.form-inline
+{
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-inline i
+{
+    font-size: 50px;
+    color: white;
+}
+.form-inline input
+{
+    font-size: 50px;
+    color: white;
+}
+#myForm
+{
+    display: flex;
+    flex-direction: column;
+}
+.typo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+select option
+{
+    font-size: 18px;
+}
+.result
+{
+    text-align: center;
+    font-size: 50px;
+    background-color: #C3073F;
+    color: white;
+    border: 3px double black;
+}
+.noresult
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.noresult img
+{
+    max-width: 900px;
+    max-height: 500px;
+}
+.searchResults
+{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:1190px)
+{
+    .noresult img
+    {
+       max-width: 600px;
+       max-height: 400px;
+    }
+}
+@media screen and (max-width:800px)
+{
+    .noresult img
+    {
+       max-width: 400px;
+       max-height: 200px;
+    }
+}
+@media screen and (max-width:580px)
+{
+    .noresult img
+    {
+       max-width: 200px;
+       max-height: 100px;
+    }
+}
+@media screen and (max-width:690px)
+{
+    .form-inline i
+    {
+        font-size: 30px;
+    }
+    .form-inline input
+    {
+        font-size: 30px;
+        color: white;
+    }
+    .result
+    {
+        font-size: 37px;
+    }
+    select option
+    {
+       font-size: 18px;
+    }
+}
+@media screen and (max-width:490px)
+{
+    .form-inline i
+    {
+        font-size: 25px;
+    }
+    .form-inline input
+    {
+        font-size: 27px;
+        color: white;
+    }
+    .result
+    {
+        font-size: 27px;
+    }
+}
+@media screen and (max-width:370px)
+{
+    .form-inline i
+    {
+        font-size: 22px;
+    }
+    .form-inline input
+    {
+        font-size: 25px;
+        color: white;
+    }
+    .result
+    {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,263 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
+.top-right p
+{
+    text-align: center;
+    font-size: 38px;
+    color: white;
+}
+.top-right #choose
+{
+    text-align: center;
+    font-size: 50px;
+    background-color: #C3073F;
+    color: white;
+    border: 3px double black;
+}
+.alert
+{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.pro
+{
+    text-align: center;
+    font-size: 10rem;
+    background-color: #C3073F;
+    color: white;
+    border: 3px double black;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.pro p
+{
+    font-size: 7rem;
+}
+.pack
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.card
+{
+    width: 24rem;
+    height: 37rem;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+.card-text i
+{
+    font-size: 18px;
+    color: black;
+}
+.card-title
+{
+    font-size: 2rem;
+}
+.card p
+{
+    color: #C3073F;
+}
+.ben
+{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+.benefits
+{
+    background-color: white;
+    border: 10px double black;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 40px;
+    margin-top: 20px;
+    padding: 70px;
+}
+.benefits .tags
+{
+    height: 160px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.815);
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 5px 5px  rgba(0, 0, 0, 0.479);
+}
+.benefits .tags i
+{
+    font-size: 45px;
+    color: white;
+    padding: 5px;
+}
+
+
+@media screen and (max-width:1200px)
+{
+    .benefits .tags
+    {
+        width: 280px;
+        height: 130px;
+    }
+    .benefits .tags i
+    {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:1097px)
+{
+    .card
+    {
+        width: 19rem;
+        height: 32rem;
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+    .card img
+    {
+        height: 12rem;
+    }
+    .card-title
+    {
+        font-size: 1.5rem;
+    }
+    .card p
+    {
+        font-size: 1.6rem;
+    }
+    .card-text i
+    {
+        font-size: 15px;
+    }
+    .pro
+    {
+
+        font-size: 4rem;
+    }
+    .pro p
+    {
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width:852px)
+{
+    .pack
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card
+    {
+        width: 25rem;
+        height: 37rem;
+        border-radius: 10px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .card-text i
+    {
+        font-size: 19px;
+    }
+    .card-title,
+    .card p
+    {
+        font-size: 2.1rem;
+    }
+    .card img
+    {
+        height: 16rem;
+    }
+    #sidebar
+    {
+        height: 32rem;
+    }
+}
+@media screen and (max-width:548px)
+{
+    .benefits .tags
+    {
+        width: 480px;
+        height: 150px;
+        padding: 0pc;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .card
+    {
+        width: 19rem;
+        height: 32rem;
+        border-radius: 10px;
+    }
+    .card img
+    {
+        height: 12rem;
+    }
+    .card-title
+    {
+        font-size: 1.5rem;
+    }
+    .card p
+    {
+        font-size: 1.6rem;
+    }
+    .card-text i
+    {
+        font-size: 15px;
+    }
+    .top-right #choose
+    {
+        font-size: 38px;
+    }
+    .tags p
+    {
+        font-size: 16px;
+    }
+    .benefits .tags i
+    {
+        font-size: 22px;
+    }
+    .pro
+    {
+
+        font-size: 3rem;
+    }
+    .pro p
+    {
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width:448px)
+{
+    .pro
+    {
+        font-size: 2rem;
+    }
+    .pro p
+    {
+        font-size: 2.5rem;
+    }
+    .benefits
+    {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/admincontrol.css">
+</head>
+
+<body>
+    <div class="nav">
+        <header>
+            <a href="/admin/upload">Upload</a>
+            <a href="/admin/flags">Flags</a>
+            <a href="/admin/users">Users</a>
+            <a href="/admin/regseries">Reg-Series</a>
+        </header>
+        <div class="mid">
+            <img src="/static/icon.jpg" alt="">
+            <p>StrangeFlix</p>
+        </div>
+
+        <div class="topnav">
+            <a href="#home" class="active"></a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <div class="adminlink">
+                    <a href="/admin/control">Home</a>
+                </div>
+                <a href="/admin/setting">Setting</a>
+                <a href="https://dashboard.paystack.com/#/transactions?status=success&use_cursor=true">Transactions</a>
+                <a href="/home">User-Panel</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sider">
+            <button onclick="single()">Solo</button>
+            <button onclick="series()">Series</button>
+        </div>
+        <div id="middle-solo">
+            <% for(var i=0; i < videoarray.length; i++) { %>
+            <% if(videoarray[i]._seriesId == null) { %>
+            <div id="vid">
+                <img id="thumbnail" src="/<%= videoarray[i].thumbnail %>" alt="" onclick="play()">
+                <div class="detail">
+                    <p>Name: <%= videoarray[i].title %></p>
+                    <p>Duration:
+                        <%= videoarray[i].duration.hours %>:<%= videoarray[i].duration.minutes %>:<%= videoarray[i].duration.seconds %>
+                    </p>
+                    <p>Price: <%= videoarray[i].price %></p>
+                    <p>Category: <%= videoarray[i].category %></p>
+                </div>
+                <div class="btns">
+                    <form action="/admin/remove/video/<%= videoarray[i]._id %>" method="GET">
+                        <button type="submit">Remove</button>
+                    </form>
+                    <form action="/admin/edit/video/<%= videoarray[i]._id %>" method="GET">
+                        <button type="submit">Edit</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+        </div>
+        <div id="middle-series">
+            <% for(var i=0; i < series.length; i++) { %>
+            <div id="vid">
+                <img id="thumbnail" src="/<%= series[i].seriesThumbnail %>" alt="" onclick="play()">
+                <div class="detail">
+                    <p>Series-Title: <%= series[i].seriesTitle %></p>
+                    <p>Series-Duration: 
+                        <%= series[i].seriesDuration.hours %>:<%= series[i].seriesDuration.minutes %>:<%= series[i].seriesDuration.seconds %>
+                    </p>
+                    <p>Series-Price: <%= series[i].seriesPrice %></p>
+                    <p>No. of Episodes: <%= series[i].episodeCount %></p>
+                    <p>Series-Category: <%= series[i].seriesCategory %></p>
+                </div>
+                <div class="btns">
+                    <form action="/admin/remove/series/<%= series[i]._id %>" method="GET">
+                        <button type="submit">Remove</button>
+                    </form>
+                    <form action="/admin/edit/series/<%= series[i]._id %>" method="GET">
+                        <button type="submit">View</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="/static/fe_js/admincontrol.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

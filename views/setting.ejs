@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-Settings</title>
+    <link rel="stylesheet" href="../static/css/setting.css">
+    <link rel="stylesheet" href="../static/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../static/bootstrap/mdb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body onload="personal()">
+    <div class="sficon">
+        <div class="logo">
+            <img src="../static/icon.jpg" alt="">
+            <p>StrangeFlix</p>
+        </div>
+        <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+    <div class="top">
+        <div id="sidebar">
+            <div class="icon" onclick="personal()">
+                <a><i class="fa fa-id-badge"></i></a>
+                <p>Personal</p>
+            </div>
+            <div class="icon" onclick="security()">
+                <a><i class="fa fa-key"></i></a>
+                <p>Security</p>
+            </div>
+            <div class="icon" onclick="subs()">
+                <a><i class="fa fa-youtube-play"></i></a>
+                <p>Subscription</p>
+            </div>
+            <div class="icon">
+                <a href="/home"><i class="fa fa-home"></i></a>
+                <p>HOME</p>
+            </div>
+        </div>
+        <div class="content">
+            <% if (message != "") { %>
+                <div class="alert alert-success" role="alert">
+                    <%= message %>
+                </div>
+            <% } %>
+            <% if (error != "") { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <div id="personal">
+                <p>Personal Information</p>
+                <form action="/setting/personal" method="post">
+                    <div class="form">
+                        <label for="fname">First Name:</label>
+                        <input type="text" name="fName" id="fname" value="<%= user.fName %>" required>
+                    </div>
+                    <div class="form">
+                        <label for="fname">Last Name:</label>
+                        <input type="text" name="lName" id="lname" value="<%= user.lName %>" required>
+                    </div>
+                    <div class="form">
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" value=<%= user.age %> min="18" required>
+                    </div>
+                    <div class="form">
+                        <label for="email">Email ID:</label>
+                        <input type="email" name="email" id="email" value="<%= user.email %>" readonly>
+                    </div>
+                    <div class="form">
+                        <input type="submit" class="change" value="Update Details">
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="security">
+                <p>Change Password</p>
+                <form action="/setting/security" method="post">
+                    <div class="form">
+                        <label for="oldpass">Current Password:</label>
+                        <input type="password" name="oldpass" id="oldpass" required>
+                    </div>
+                    <div class="form">
+                        <label for="newpass">New Password:</label>
+                        <input type="password" name="newpass" id="password"  required>
+                    </div>
+                    <div class="form">
+                        <label for="confirmpass">Confirm Password:</label>
+                        <input type="password" name="confirmpass" id="confirmpassword" onkeyup="check()" required>
+                    </div>
+                    <div class="form">
+                        <input type="submit" class="change" id="submit" value="Change Password" disabled="disable">
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="subs">
+                <p>Subscription Details</p>
+                <a href="/premium">Check your Subscription Details</a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="../static/fe_js/setting.js"></script>
+    <%- include ("footer") %>

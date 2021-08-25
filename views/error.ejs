@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error-404</title>
+    <link rel="stylesheet" href="/static/css/error.css">
+</head>
+
+<body>
+    <div class="alert">
+        <% if (message != "") { %>
+        <div class="alert-success">
+            <%= message %>
+        </div>
+        <% } %>
+        
+        <% if (error != "") { %>
+        <div class="alert-danger">
+            <%= error %>
+        </div>
+        <% } %>
+    </div>
+</body>
+
+</html>

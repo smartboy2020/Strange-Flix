@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
+
+.sficon
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* position: relative; */
+}
+.sficon .back
+{
+    margin-top: 1%;
+    font-size: 44px;
+    color: white;
+}
+.sficon .back:hover
+{
+    color: #C3073F;
+}
+.form-search
+{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+}
+.form-search .fa 
+{
+    font-size: 30px;
+    color:white;
+    padding-right: 2px;
+    margin-top: 1%;
+}
+.search
+{
+    width: 450px;
+    height: 40px;
+    font-size: 22px;
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    border:2px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sficon .dropdown
+{
+    margin-top: 1%;
+    right: 0;
+    background-color: black;
+    width: 100px;
+}
+.sficon .dropdown .btn
+{
+    background-color: black;
+}
+.sficon .dropdown .btn .fa
+{
+    color: aliceblue;
+    font-size: 29px;
+}
+.sficon .dropdown-menu a
+{
+    font-size: 20px;
+    color: #C3073F;
+}
+#user .dropdown-menu
+{
+    max-width: 50px;
+}
+.alert
+{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.mid
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.player
+{
+    width: 85%;
+    border-radius: 20px;
+}
+.player__button
+{
+    font-size: 17px;
+    color: white;
+    margin-top: 10px;
+}
+.player .fa
+{
+    margin: 5px;
+    padding: 0;
+}
+.like
+{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+.like p
+{
+    color: #C3073F;
+    font-size: 40px;
+}
+.likebar
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+#comments .dropdown-menu,
+#description .dropdown-menu
+{
+    width: 800px;
+    
+}
+#description .dropdown-menu p,
+#comments .dropdown-menu p
+{
+    font-size: 15px;
+}
+.comment-box
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.comment-box button
+{
+    width: 120px;
+    margin: 3px;
+    background-color: #C3073F;
+    color: white;
+    border: 2px solid #C3073F;
+}
+.comment-box button:hover
+{
+    background-color: white;
+    color:#C3073F ;
+}
+.like-btn button
+{
+    outline: 0;
+    background-color: black;
+    border: 2px solid black;
+}
+.like-btn .fa
+{
+    color: white;
+    font-size: 40px;
+}
+.cat
+{
+    display: flex;
+    flex-direction: row;
+}
+.cat button
+{
+    margin-right: 20px;
+}
+.like-btn .fa:hover
+{
+    color: #C3073F;
+}
+.descp
+{
+    background-color: rgba(255, 255, 255, 0.096); 
+    border-radius: 10px;
+    border-style: double;
+    margin-right: 20px;
+    width: 100%;
+}
+.descp p
+{
+    font-size: 18px;
+    color:white;
+    padding: 10px; 
+}
+.operation
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.rep
+{
+    width: 120px;
+    height: 42px;
+    margin: 3px;
+    border-radius: 4px;
+    background-color: white;
+    color:#C3073F ;
+    border: 5px solid rgb(41, 7, 41);
+}
+#btn-comment:hover,
+.rep:hover
+{
+    background-color: #C3073F;
+    color: white;
+}
+#btn-comment
+{
+    margin-left: 8.1%;
+    background-color: white;
+    font-family: 'Baloo 2', cursive;
+    color: #C3073F;
+}
+#comment-section
+{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.userBtn
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.commentedit
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.usertitle
+{
+    font-size: 22px;
+    color: #C3073F;
+    background-color: #c3073f5b;
+    padding: 4px;
+}
+.commentedit textarea
+{
+    width: 100%;
+    text-align: left;
+    outline: none;
+    border: 2px solid rgba(7, 7, 7, 0.082);
+}
+.cmt
+{
+    width: 120px;
+    height: 35px;
+    margin: 3px;
+    background-color: #C3073F;
+    color: white;
+    border: 2px solid #C3073F;
+}
+.cmt:hover
+{
+    background-color: white;
+    color:#C3073F ;
+}
+.recom
+{
+    margin-left: 20px;
+}
+.recom p
+{
+    color: white;
+    font-size: 40px;
+}
+.content
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.content p
+{
+    font-size: 49px;
+    color:#C3073F;
+}
+.imgs
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.imgs img
+{
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    margin: 25px;
+}
+.box
+{
+    position: relative;
+}
+.text
+{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+.text p
+{
+    color: white;
+    font-size: 16px;
+}
+.text button
+{
+    width: 50px;
+    text-align: center;
+    border-radius: 2020px;
+    font-size: 43px;
+    border: 2px solid black;
+}
+.text .add
+{
+    margin-top: 5px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+}
+.text button:hover,
+.text .add:hover
+{
+    box-shadow: 2px 2px 7px 7px whitesmoke;
+}
+.box:hover img
+{
+    opacity: 0.19;
+    transform: scale(1.2);
+}
+.box:hover .text
+{
+    opacity: 1;
+}
+@media screen and (max-width:850px)
+{
+    .search
+    {
+        width: 300px;
+        height: 35px;
+        font-size: 20px;
+        margin-top: 2%;
+    }
+    .like-btn .fa
+    {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:782px)
+{
+    .search
+    {
+        width: 200px;
+        height: 25px;
+        font-size: 17px;
+        margin-top: 3%;
+    }
+    .player__button
+    {
+        font-size: 9px;
+        margin-top: 6px;
+    }
+    .like p
+    {
+        font-size: 30px;
+    }
+    .descp p
+    {
+        padding: 0;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:620px)
+{
+    .imgs img
+    {
+        width: 270px;
+        height: 170px;
+        margin: 15px;
+    }
+    .text
+    {
+        font-size: 9px;
+    }
+    .text .add
+    {
+        font-size: 9px;
+        margin-top: 1px;
+    }
+    .box:hover img
+    {
+       opacity: 0.19;
+       transform: scale(1.1);
+    }
+    .text p
+    {
+       color: white;
+       font-size: 12px;
+    }
+    .text button
+    {
+        font-size: 24px;
+        width: 30px;
+    }
+}
+@media screen and (max-width:480px)
+{
+    .recom p
+    {
+        font-size: 24px;
+    }
+    .like-btn .fa
+    {
+        font-size: 22px;
+    }
+    .sficon .back
+    {
+        font-size: 22px;
+    }
+    .sficon .dropdown .btn .fa
+    {
+        font-size: 20px;
+    }
+    .form-search .fa 
+    {
+        margin-top: 2%;
+        font-size: 20px;
+    }
+    .search
+    {
+        width: 160px;
+        height: 25px;
+        font-size: 15px;
+        margin-top: 3%;
+    }
+    .like p
+    {
+        font-size: 22px;
+    }
+    .descp p
+    {
+        padding: 0;
+        font-size: 10px;
+    }
+    .text
+    {
+        font-size: 9px;
+    }
+    .text .add
+    {
+        font-size: 9px;
+        margin-top: 1px;
+    }
+    .box:hover img
+    {
+       opacity: 0.19;
+       transform: scale(1.1);
+    }
+    .text p
+    {
+       color: white;
+       font-size: 11px;
+    }
+    .text button
+    {
+        font-size: 20px;
+        width: 30px;
+    }
+}
